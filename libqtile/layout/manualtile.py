@@ -148,6 +148,11 @@ class ManualTile(Layout):
         new_tile = _Tile(old_tile.x1,old_tile.y0,right,old_tile.y1,clients=[],dirty=False)
         index = self.tiles.index(old_tile)
         self.tiles.insert(index+1,new_tile)
+        focused = self.focused_tile
+        self.focused_tile = index+1
+        import subprocess
+        subprocess.Popen(['empty_win', '&'], stdout=subprocess.PIPE)
+        self.focused_tile = focused
         self.group.layoutAll(True)
 
     def split_horizontal(self):
