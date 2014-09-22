@@ -70,7 +70,8 @@ setup(
         "bin/qsh",
         "bin/qtile",
         "bin/qtile-run",
-        "bin/qtile-session"
+        "bin/qtile-session",
+        "bin/empty_win"
     ],
     data_files=[
         ('share/man/man1', ['resources/qtile.1',
